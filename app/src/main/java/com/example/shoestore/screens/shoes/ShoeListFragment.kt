@@ -44,12 +44,8 @@ class ShoeListFragment : Fragment(), MenuProvider {
             findNavController().navigate(R.id.action_shoeListFragment_to_addShoeFragment)
         }
 
-        Log.i("stuff from view model", viewModel.shoeList.toString())
-        Log.i("added", viewModel.shoeList.value?.size.toString())
-
         viewModel.shoeList.observe(this.viewLifecycleOwner, Observer { shoeElements ->
             shoeElements.forEach{ shoe ->
-                Log.i("Inside foreach", "Inside foreach")
                 val shoeItem = ShoeItemBinding.inflate(layoutInflater)
                 shoeItem.shoe = shoe
                 binding.linear1.addView(shoeItem.root)

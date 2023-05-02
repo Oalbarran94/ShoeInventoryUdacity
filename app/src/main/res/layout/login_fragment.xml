@@ -3,6 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Used ConstraintLayout here because it was kind of mandatory
+        and it is better at placing elements in the ui. Also, it provides
+        responsive layout. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/title_layout"
         android:layout_width="match_parent"

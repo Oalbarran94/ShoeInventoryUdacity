@@ -17,9 +17,7 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentWelcomeBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_welcome, container, false
-        )
+        val binding: FragmentWelcomeBinding = FragmentWelcomeBinding.inflate(inflater, container, false)
 
         binding.welcomeButton.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeFragment_to_instructionFragment)

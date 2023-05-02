@@ -9,6 +9,11 @@
             type="com.example.shoestore.model.ShoeListViewModel" />
     </data>
 
+    <!-- Used ConstraintLayout here because it was kind of mandatory
+        and it is better at placing elements in the ui. Also, it provides
+        responsive layout. Besides, this fragment provides lookalike
+        components from others fragments within the project -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/title_layout"
         android:layout_width="match_parent"
@@ -21,6 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--
+                LinearLayout was used here since it provides the facility to add new elements
+                from kotlin code
+            -->
             <LinearLayout
                 android:id="@+id/linear1"
                 android:layout_width="match_parent"

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.shoestore.R
 import com.example.shoestore.databinding.FragmentAddShoeBinding
@@ -15,7 +15,7 @@ import com.example.shoestore.model.ShoeListViewModel
 
 class AddShoeFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeListViewModel
+    private val viewModel: ShoeListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +25,6 @@ class AddShoeFragment : Fragment() {
         val binding : FragmentAddShoeBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_add_shoe, container, false
         )
-
-        viewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
 
         binding.lifecycleOwner = this
         binding.shoemodel = viewModel

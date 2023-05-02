@@ -9,6 +9,11 @@
             type="com.example.shoestore.model.Shoe" />
     </data>
 
+    <!-- Used ConstraintLayout here because it was kind of mandatory
+        and it is better at placing elements in the ui. Also, it provides
+        responsive layout. Besides, this fragment provides lookalike
+        components from others fragments within the project -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

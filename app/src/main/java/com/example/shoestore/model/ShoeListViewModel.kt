@@ -13,7 +13,7 @@ class ShoeListViewModel : ViewModel() {
     var shoeCompany = ""
     var shoeDescription = ""
 
-    private var initialShoeList = mutableListOf(
+    var initialShoeList = mutableListOf(
         Shoe(1, "crazy shoe", "Just a crazy shoe", "Nike", "10"),
         Shoe(2, "cool shoe", "Just a cool shoe", "Jordan", "15"))
 
@@ -22,16 +22,12 @@ class ShoeListViewModel : ViewModel() {
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
 
-
     fun addShoeItem(){
+        Log.i("ShoeListViewModel", "Adding Shoe")
         val shoe = Shoe(Random.nextInt(0, 100), shoeName, shoeDescription, shoeCompany, shoeSize)
         initialShoeList.add(shoe)
-        Log.i("added", initialShoeList.toString())
-        Log.i("added", initialShoeList.size.toString())
 
         _shoeList.value = initialShoeList
         _shoeList.postValue(initialShoeList)
-        Log.i("added", _shoeList.toString())
-        Log.i("added", _shoeList.value?.size.toString())
     }
 }
